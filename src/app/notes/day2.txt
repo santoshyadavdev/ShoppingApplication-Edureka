@@ -1,0 +1,75 @@
+Extensions:
+1.Path Autocomplete
+2.VS Code icons
+
+Featues and Advantages of Angular
+
+MVC (Model View Controller)
+Jquery: lot of code required to achieve the data binding and add events
+Libraries: Jquery, React
+A framework
+Single frameowrk for Mobile and Web
+Component based architecture
+Its a complete framework for UI development
+
+1. Binding
+2. communication with other API/Service
+3. Best guidelines
+4. Should be able to define URLs
+
+
+Only write HTML.
+Has its own template Engine
+Can do unit testing of code.
+
+CLI scaffolding
+1. Create a new project
+	ng new ShoppingApplication
+
+Project Structure
+1. src - Lot of code goes inside this folder
+2. node_mmodules - all libraries will be saved here
+3. e2e - this is for end to end testing
+
+
+Files: 
+1. Index.html - This is master page for our application
+2. Styles.css - to provide css class globally
+3. polyfills.ts - gives compatibility for browser which doesnt support all ES6 features.
+4. test.ts - Required for unit testing
+5. main.ts - Entry point for our angular application
+6. app/app.module.ts - It  is root module inside our application and our app should have atleast one module
+
+Decorators :
+1. Decorators : It adds some extra functionality to our class
+2. NgModule: Used to define a Angular module
+3. Component: Used to create a Component
+
+ngModule Properties: 
+1. declarations: All components/directives/pipes should be part of declarations array.
+2. imports : used to register any third party module and our modules
+3. providers : used to register a Service
+4. bootstrap : Used to register root component for our application
+
+Component properties:
+1. selector: defining the html tag
+2. templateUrl : give relative path to your html file.
+3. template: alows us to write inline htmls
+4. styleUrls : Css for specific copmonent
+
+Componets:
+1. to creat a componen : ng g component <component-name>
+2. Register it using declarations property of our module.
+3. use the component in any html as a html tag
+
+Binding
+Property Bindig:
+1. we can bind data to any valid property of html tag
+2. use box "[]" syntax for property binding
+
+Event Binding
+1.we can use banana "()" syntax for event Binding
+2. for event remove "on" from javascript events
+
+ngFor:
+1. Use it to bind list of records
