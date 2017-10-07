@@ -1,0 +1,26 @@
+To include bootstrap
+1. add the link from below url on index.html
+   http://getbootstrap.com/docs/3.3/getting-started/#download
+
+Component Intercation
+
+1.Send and Receive the data between multiple Components
+
+
+To Pass data from parent component to child component
+1. Create a Input property by using @Input decorator
+2. Add the component on a parent component
+3. Pass data using concept of property binding
+
+
+To Pass Data from child to parent
+1. Create a eventemitter using @Output decorator
+2. Define the property as event binding on parent component
+3. Create a function in parent component to handle the event emitted by child
+
+To control the child component from TS file.
+1. Creat a instance of child component in our parent component using @ViewChild decorator.
+
+Disadvantages:
+1. Tight coupling between our Components
+2. Hard to reuse the components

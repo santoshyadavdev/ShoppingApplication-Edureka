@@ -1,0 +1,21 @@
+
+1. constructor
+  This will be first lifecycle hook which will be triggered.
+
+2. OnInit
+ this event is called when our component is getting initialized.
+ Best place to assign properties, get data from service.
+
+3. DoCheck
+ called after init and after any event is triggered.
+ Best place to write cusotm validations and implement auto complete
+
+4. OnChanges
+ will be called before init,and after your input properties are moified
+ The component should have atlease 1 Input property to implement OnChanges.
+
+5. OnDestroy
+ This will be called before your component gets destroyed.
+
+ 6. ngAfterViewInit 
+  Called after view and its child components are initialized.

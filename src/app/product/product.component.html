@@ -1,7 +1,7 @@
 <h1>
   Product page
 </h1>
-{{productName}}
+<!-- {{productName}} -->
 <!-- This is interpolation syntax to bid data -->
 
 <div [hidden]="hidden" [innerText]="productName">
@@ -9,23 +9,17 @@
 </div>
 
 
-<button (click)="toggle()">Toggle</button>
+<button class="btn btn-primary" (click)="toggle()">Toggle</button>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of products">
-      <td>
-        {{product.id}}
-      </td>
-      <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
-    </tr>
-  </tbody>
-</table>
+<app-product-list
+(visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list>
+
+
+<app-product-list 
+(visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list>
+
+
+
+<!-- <app-product-list [title]="'Product List'" (visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list> -->
+
+{{message}}
