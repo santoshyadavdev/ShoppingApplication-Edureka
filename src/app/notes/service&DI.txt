@@ -1,0 +1,32 @@
+1. Services:
+    What is a Service:
+        A common class which will provide some functionality.
+    why service is important:
+        1. Reusability
+        2. Code seperation
+        3. Business logiC/rules are seperated
+        4. Get the data from multiple APIs
+        5. loosely coupled system
+
+
+Creating a service in Angualr:
+1. ng g service <service_name>
+2. @Injectable() this decortaor with provide the class a a service
+3. add the methods required.
+4. Register the service, using app.module.ts , add an entry in
+providers array.
+5. Using the service
+
+
+DI (Dependency Injection)
+1. it helps us to create loosely coupled system
+2. the class dont need to create a instance
+3. Widely used Design Pattern
+
+Angular DI framework:
+1. Has its on IOC(Inversion of Control).
+2. No overhead like other frameworks
+
+Singleton:
+1. You get a single instance of class across application
+2. Can be used to share some common data.

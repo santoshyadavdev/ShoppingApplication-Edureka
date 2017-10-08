@@ -1,7 +1,9 @@
 import { Component, DoCheck, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren, AfterViewInit } from '@angular/core';
-import { Product } from './product';
+import { Product } from '../service/product/product';
 
 import { ProductListComponent } from './product-list/product-list.component';
+
+import { ProductService } from '../service/product/product.service';
 
 @Component({
   selector: 'app-product',
@@ -13,12 +15,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy, AfterViewIn
   hidden: boolean = true;
   message: string;
   title: string = 'Product List';
-  products: Product[] = [{
-    id: 1, name: 'LED TV', price: 10000
-  },
-  {
-    id: 2, name: 'AC', price: 20000
-  }];
+  // productService = new ProductService();
 
   @ViewChild(ProductListComponent)
   productListComponent: ProductListComponent;
@@ -26,12 +23,12 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy, AfterViewIn
   @ViewChildren(ProductListComponent)
   productListChildren: QueryList<ProductListComponent>;
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     console.log(this.productListComponent);
     console.log('This is viewChildren instance' + this.productListChildren);
-    this.productListComponent.productList = this.products;
+    this.productListComponent.productList = this.productService.getProducts();
     this.productListComponent.title = this.title;
   }
 
@@ -41,7 +38,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy, AfterViewIn
 
     this.productListChildren.forEach((data) => setTimeout(() => {
       data.title = 'Product List Children';
-      data.productList = this.products;
+      data.productList = this.productService.getProducts();
     }, 0));
 
   }
