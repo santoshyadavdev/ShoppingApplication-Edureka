@@ -3,8 +3,16 @@
   <h1>
     Welcome to {{title}}!!
   </h1>
+ {{loginService.isLoggedIn | json}}
+ <hr>
 
+  {{productList| json}}
+  <button type="button" (click)="addProduct()" class="btn btn-primary">Add Product</button>
+  <hr>
 
-<app-product></app-product>
+  <app-product></app-product>
+  <hr>
+
+  <app-customer></app-customer>
 
 </div>

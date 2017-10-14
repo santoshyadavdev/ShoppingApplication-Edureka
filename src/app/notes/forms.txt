@@ -1,0 +1,28 @@
+Forms.
+
+1. Essential part fo enterprise application
+2. Get userinfo , login, forms for raising support issue.
+
+Types:
+1. Template driven forms
+2. Reactive Forms
+
+
+How to use Template Driven forms:
+
+1. Import FormsModule and register the same , so it can be used by entire application
+2. Create html form using form tag
+3. for validation create a instance of form tag using
+#variableName="ngForm"
+4. To create a instance of input control use #varName="ngModel" and use its properties
+
+when to use template forms:
+1. we want to give control to html developer
+2. Forms is very simple
+
+
+
+How to use Reactive forms:
+
+
+

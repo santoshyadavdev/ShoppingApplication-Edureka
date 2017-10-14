@@ -30,3 +30,23 @@ Angular DI framework:
 Singleton:
 1. You get a single instance of class across application
 2. Can be used to share some common data.
+
+
+Singleton Vs NonSingleton
+1. Register a service in app/Root module and it will be Singleton
+2. If we register the service in component , it becomes available for particular component
+
+
+we can alo register our service using below syntax
+  { provide: LoginService, useClass: LoginService } 
+
+the above syntax will help us to remove any implmentation and use new implmentation in future
+  { provide: LoginService, useClass: NewLoginService } 
+
+
+Other types of non-class based service:
+1. Value provider  -- will be discussed during http
+2. Factory  -- we will discuss during routing
+
+
+

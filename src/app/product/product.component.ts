@@ -8,13 +8,15 @@ import { ProductService } from '../service/product/product.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css'],
+  providers: [ProductService]
 })
 export class ProductComponent implements OnInit, DoCheck, OnDestroy, AfterViewInit {
   productName: string = 'LED TV 56inches';
   hidden: boolean = true;
   message: string;
   title: string = 'Product List';
+  product: Product = new Product();
   // productService = new ProductService();
 
   @ViewChild(ProductListComponent)
@@ -30,11 +32,11 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy, AfterViewIn
     console.log('This is viewChildren instance' + this.productListChildren);
     this.productListComponent.productList = this.productService.getProducts();
     this.productListComponent.title = this.title;
+    //this.product = this.productService.getProducts()[0];
   }
 
   ngAfterViewInit(): void {
     console.log(this.productListChildren);
-
 
     this.productListChildren.forEach((data) => setTimeout(() => {
       data.title = 'Product List Children';
@@ -58,6 +60,11 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy, AfterViewIn
 
   messageFromChild(message: string) {
     this.message = message;
+  }
+
+  addProduct() {
+    this.productService.addProduct(this.product);
+    this.productListComponent.productList = this.productService.getProducts();
   }
 
   ngOnDestroy(): void {

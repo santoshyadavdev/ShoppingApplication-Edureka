@@ -10,13 +10,40 @@
 
 
 <button class="btn btn-primary" (click)="toggle()">Toggle</button>
+<hr> {{product|json}} {{product.id}} 
+<hr>
+{{productForm.invalid | json}}
+{{productForm.value | json}}  {{productForm.valid | json}} 
+<form #productForm="ngForm" (submit)="addProduct()" novalidate>
+  <div class="form-group">
+    <input type="number" required min="3" max="10"  [(ngModel)]="product.id" name="id" class="form-control" placeholder="Product ID" #pid="ngModel">
+    <div>
+      {{pid.invalid | json}}
+      {{pid.valid | json}}
+      {{pid.value | json}}
+      {{pid.errors | json}}
+      {{pid.pristine | json}}
+      {{pid.dirty | json}}
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required minlength="3" maxlength="10"  [(ngModel)]="product.name" name="pname" class="form-control" placeholder="Product Name">
+  </div>
+  <div class="form-group">
+    <input type="number" required [(ngModel)]="product.price" name="price" class="form-control" placeholder="Product Price">
+  </div>
+  <div>
+    <button [disabled]="productForm.invalid" type="submit" class="btn btn-primary">Add Product</button>
+  </div>
+</form>
 
-<app-product-list
-(visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list>
+
+<hr>
+
+<app-product-list (visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list>
 
 
-<app-product-list 
-(visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list>
+<app-product-list (visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list>
 
 
 
