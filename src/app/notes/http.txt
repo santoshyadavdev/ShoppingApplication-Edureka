@@ -1,0 +1,20 @@
+the new http service is available after 4.3.0
+
+Why to use http:
+1. in enterprise application we need to get and send data over to some API.
+
+How to implement:
+1. import and add HttpClientModule to imports array
+2.
+
+Advantages:
+1.  Gives the data in stream, we will get data in packets
+2.  Uses Pub-Sub design pattern (Publish and Subscribe)
+3.  RxJS library being used, and it is also a proposed feature for ES6
+
+
+http interceptor:
+why:
+1. To set global headers.
+2. Modify some request before the call is made to actual API.
+
