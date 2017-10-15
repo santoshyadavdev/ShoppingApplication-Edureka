@@ -65,6 +65,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy, AfterViewIn
   addProduct() {
     this.productService.addProduct(this.product);
     this.productListComponent.productList = this.productService.getProducts();
+    this.product = new Product();
   }
 
   ngOnDestroy(): void {

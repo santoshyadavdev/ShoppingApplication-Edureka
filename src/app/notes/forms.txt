@@ -16,13 +16,31 @@ How to use Template Driven forms:
 #variableName="ngForm"
 4. To create a instance of input control use #varName="ngModel" and use its properties
 
-when to use template forms:
+when to use template driven forms:
 1. we want to give control to html developer
-2. Forms is very simple
+2. Form is very simple
+
+To reset form reinitializ the model.
 
 
 
 How to use Reactive forms:
 
+1. Import ReactiveFormsModule and add in imports array
+2. need to use below classes and services
+    FormGroup, FormBuilder, FormControl, FormArray
+3. For html need to use below give tags/properties
+    formGroup,formGroupName,formControlName, formArrayName
 
 
+when to use Reactive forms:
+1. You need to control your form from typsscript
+2. Need to create complex form, where we need to add control dynamically
+
+To Apply validations in reactive forms:
+1. use Validators class, we have all validations available with this class
+
+https://www.npmjs.com/package/ng2-toastr for toastr
+
+to reset a rective form 
+use reset function which is available on formGroup

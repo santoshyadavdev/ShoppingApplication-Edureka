@@ -1,8 +1,15 @@
 <h1>{{customerForm.value|json}}</h1>
 
-<form [formGroup]="customerForm">
+<div *ngIf="formSubmitted" class="alert alert-success">
+  Data saved!
+</div>
+<form [formGroup]="customerForm" (submit)="addCustomer()" novalidate>
   <div class="form-group">
     <input class="form-control" type="text" formControlName="name" name="cname" placeholder="Customer Name">
+    <div>
+      {{customerForm.get('name').valid}} {{customerForm.get('name').invalid}} {{customerForm.get('name').errors| json}} {{customerForm.get('name').pristine}}
+      {{customerForm.get('name').dirty}}
+    </div>
   </div>
   <div class="form-group">
     <input class="form-control" type="date" formControlName="dob" name="dob" placeholder="Date Of Birth">
@@ -16,6 +23,9 @@
   <div formGroupName="address">
     <div class="form-group">
       <input class="form-control" type="text" formControlName="addressLine1" name="addr1" placeholder="Address Line1">
+      <div>
+        {{customerForm.get('address.addressLine1').valid}}
+      </div>
     </div>
     <div class="form-group">
       <input class="form-control" type="text" formControlName="addressLine2" name="addr2" placeholder="Address Line2">
@@ -30,25 +40,31 @@
   <div>
     <button type="button" (click)="addCard()" class="btn btn-primary">AddCard</button>
   </div>
-  <div formArrayName="cards">
+  <div class="form-group" formArrayName="cards">
     <div *ngFor="let card of customerForm.controls.cards.controls;let i=index">
       <div [formGroupName]="i">
-          <div class="form-group">
-              <input class="form-control" type="number" formControlName="cardNumber" name="cardNumber" placeholder="Card Number">
-            </div>
-            <div class="form-group">
-              <input class="form-control" type="number" formControlName="expiryMonth" name="emonth" placeholder="Expiry Month">
-            </div>
-            <div class="form-group">
-              <input class="form-control" type="number" formControlName="expiryYear" name="eyear" placeholder="Expiry Year">
-            </div>
-            <div class="form-group">
-              <input class="form-control" type="number" formControlName="cvv" name="cvvv" placeholder="cvv">
-            </div>
-            <div>
-              <button type="button" (click)="removeCard(i)" class="btn btn-danger">Remove Card</button>
-            </div>
+        <div class="form-group">
+          <input class="form-control" type="number" formControlName="cardNumber" name="cardNumber" placeholder="Card Number">
+          <div>
+            {{customerForm.get(['cards',i,'cardNumber']).valid}}
+          </div>
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="number" formControlName="expiryMonth" name="emonth" placeholder="Expiry Month">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="number" formControlName="expiryYear" name="eyear" placeholder="Expiry Year">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="number" formControlName="cvv" name="cvvv" placeholder="cvv">
+        </div>
+        <div>
+          <button type="button" (click)="removeCard(i)" class="btn btn-danger">Remove Card</button>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="form-group">
+    <button [disabled]="customerForm.invalid" type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
