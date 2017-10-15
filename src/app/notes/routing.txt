@@ -1,0 +1,18 @@
+why routing is needed.
+1. Navigating within application
+2. Display different UI based on URL
+3. pass some data in URL
+
+ui.router is third party library to achive the routing functionality.
+
+How to implememt routing:
+1. import and register the RouterModule
+2.  use forRoot method to register the different navigation in our app.
+3. use routerLink to assigne different URLS
+4. place <router-outlet> on appComponent
+
+
+RoutingModule
+1. 
+
+Router service is used to navigate from TS files.

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
+import { RoutingModule } from './routing/routing.module';
+
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
@@ -16,6 +18,7 @@ import { PostListComponent } from './post/post-list/post-list.component';
 
 import { PostService } from './service/post/post.service';
 import { HttpinterceptorService } from './interceptor/httpinterceptor.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -24,16 +27,18 @@ import { HttpinterceptorService } from './interceptor/httpinterceptor.service';
     ProductListComponent,
     CustomerComponent,
     PostComponent,
-    PostListComponent
+    PostListComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingModule
   ],
   providers: [ProductService, { provide: LoginService, useClass: NewloginService }, PostService,
-  { provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true }],
+    { provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,21 +1,32 @@
 <!--The whole content below can be removed with the new code.-->
 <div class="container">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
- {{loginService.isLoggedIn | json}}
- <hr>
-
-  {{productList| json}}
-  <button type="button" (click)="addProduct()" class="btn btn-primary">Add Product</button>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Shopping App</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a routerLink="post" routerLinkActive="active">Post</a></li>
+        <li><a routerLink="product" routerLinkActive="active">Product</a></li>
+        <li><a routerLink="customer" routerLinkActive="active">Customer</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- {{loginService.isLoggedIn | json}} -->
   <hr>
 
+  <!-- {{productList| json}}
+  <button type="button" (click)="addProduct()" class="btn btn-primary">Add Product</button>
+  <hr> -->
+  <!-- 
   <app-product></app-product>
   <hr>
 
   <app-customer></app-customer>
   <hr>
 
-  <app-post></app-post>
+  <app-post></app-post> -->
+
+  <router-outlet></router-outlet>
 
 </div>
