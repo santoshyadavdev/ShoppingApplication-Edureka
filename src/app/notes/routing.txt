@@ -7,12 +7,30 @@ ui.router is third party library to achive the routing functionality.
 
 How to implememt routing:
 1. import and register the RouterModule
-2.  use forRoot method to register the different navigation in our app.
+2. use forRoot method to register the different navigation in our app.
 3. use routerLink to assigne different URLS
 4. place <router-outlet> on appComponent
 
 
 RoutingModule
-1. 
+1. We can seperate the code related to routing configuration, by creating a new module 
+and making routing configuration changes in that module.
+
+Feature Modules:
+We can place all components/directices/pipes and routing configuration and services related to a 
+single feature together by using feature module.
+
+
+
 
 Router service is used to navigate from TS files.
+
+Guards:
+1. Restrict the access to unauthorized area.
+
+a. canActivate:
+this auth guard will check if you can access the URL.
+you can add multiple guards to this property in routing configuration.
+
+b. 
+

@@ -13,24 +13,29 @@ export class AppComponent implements OnInit {
   product: Product;
   productList: Product[];
   user: User;
-  constructor(private productService: ProductService, private loginService: LoginService) {
+  // constructor(private productService: ProductService, private loginService: LoginService) {
+
+  // }
+
+  constructor(private loginService: LoginService) {
 
   }
+
 
   ngOnInit(): void {
-    this.getProducts();
-    this.user = { userName: 'Admin', password: 'Admin' };
-    this.loginService.login(this.user);
+    //this.getProducts();
+    // this.user = { userName: 'Admin', password: 'Admin' };
+    // this.loginService.login(this.user);
   }
 
-  addProduct() {
-    this.product = { id: 3, name: 'Inverter with battery', price: 15000 }
-    this.productService.addProduct(this.product);
-    this.getProducts();
-  }
+  // addProduct() {
+  //   this.product = { id: 3, name: 'Inverter with battery', price: 15000 }
+  //   this.productService.addProduct(this.product);
+  //   this.getProducts();
+  // }
 
-  getProducts() {
-    this.productList = this.productService.getProducts();
-  }
+  // getProducts() {
+  //   this.productList = this.productService.getProducts();
+  // }
 
 }

@@ -5,11 +5,14 @@ import { User } from '../login/user';
 @Injectable()
 export class NewloginService extends LoginService {
 
-  constructor() { super(); }
+  constructor() {
+    super();
+  }
 
   login(user: User) {
     if (user.userName === 'SuperUser' && user.password === 'SuperUser') {
       this.isLoggedIn = true;
+      sessionStorage.isLoggedIn = true;
       return true;
     }
 
