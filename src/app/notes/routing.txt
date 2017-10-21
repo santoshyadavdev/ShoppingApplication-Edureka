@@ -29,7 +29,13 @@ Router service is used to navigate from TS files.
 
 Dynamic Routes:
 1. we need a url like 'product/id' , we can configure the same by useg path : 'product/:id'
-2. To access the same in the component we need to use a sevice ""
+2. To access the same in the component we need to use a sevice "ActivatedRoute" and we need to use 
+paramMap.
+
+children property:
+
+Use this property when we want to load some component based on URL in same page.
+Or in simple terms want to achive nesting.
 
 Guards:
 1. Restrict the access to unauthorized area.
@@ -38,5 +44,5 @@ a. canActivate:
 this auth guard will check if you can access the URL.
 you can add multiple guards to this property in routing configuration.
 
-b. 
+b. canActivateChild: In case we want to have extra layer of security for our child routes.
 

@@ -7,6 +7,7 @@ import { ProductComponent } from './product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AuthGuard } from '../service/authGuard/auth.guard';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 
 @NgModule({
@@ -15,8 +16,14 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     SharedModule,
     RouterModule.forChild(
       [
-        { path: 'product', component: ProductComponent, canActivate: [AuthGuard] },
-        { path: 'product/:id', component: ProductDetailComponent, canActivate: [AuthGuard] }
+        {
+          path: 'product', component: ProductComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard],
+          children: [
+            { path: ':id', component: ProductDetailComponent  },
+            { path: 'edit/:id', component: ProductEditComponent }
+          ]
+        },
+        //{ path: 'product/:id', component: ProductDetailComponent, canActivate: [AuthGuard] }
       ]
     )
     //FormsModule
@@ -24,6 +31,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
   //exports: [FormsModule];
   declarations: [ProductComponent,
     ProductListComponent,
-    ProductDetailComponent]
+    ProductDetailComponent,
+    ProductEditComponent]
 })
 export class ProductModule { }

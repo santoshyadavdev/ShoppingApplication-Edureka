@@ -43,10 +43,12 @@
 <app-product-list (visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list>
 
 
-<app-product-list (visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list>
+<!-- <app-product-list (visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list> -->
 
 
 
 <!-- <app-product-list [title]="'Product List'" (visibe)="receiveFromChild($event)" (message)="messageFromChild($event)"></app-product-list> -->
 
 {{message}}
+
+<router-outlet></router-outlet>
