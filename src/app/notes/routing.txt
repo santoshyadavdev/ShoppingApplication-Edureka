@@ -20,7 +20,8 @@ Feature Modules:
 We can place all components/directices/pipes and routing configuration and services related to a 
 single feature together by using feature module.
 
-
+Shared Module:
+this will place all common modules in single file.
 
 
 Router service is used to navigate from TS files.

@@ -35,9 +35,9 @@ import { AuthGuard } from './service/authGuard/auth.guard';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RoutingModule,
+    ProductModule,
     CustomerModule,
-    ProductModule
+    RoutingModule
   ],
   providers: [ProductService, { provide: LoginService, useClass: NewloginService }, PostService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true }, AuthGuard],
