@@ -21,6 +21,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from './service/authGuard/auth.guard';
+import { PostResolveGuard } from './service/post/post-resolve.guard';
 
 @NgModule({
   declarations: [
@@ -39,8 +40,8 @@ import { AuthGuard } from './service/authGuard/auth.guard';
     CustomerModule,
     RoutingModule
   ],
-  providers: [ { provide: LoginService, useClass: NewloginService }, PostService,
-    { provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true }, AuthGuard ],//ProductService], 
+  providers: [PostResolveGuard, { provide: LoginService, useClass: NewloginService }, PostService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true }, AuthGuard],//ProductService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

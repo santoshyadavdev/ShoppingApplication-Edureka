@@ -59,3 +59,5 @@ you can add multiple guards to this property in routing configuration.
 
 b. canActivateChild: In case we want to have extra layer of security for our child routes.
 
+c. Resolve: This guard is used to prefetch the data
+
