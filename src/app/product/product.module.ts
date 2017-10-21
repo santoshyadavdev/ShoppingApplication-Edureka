@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ProductComponent } from './product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AuthGuard } from '../service/authGuard/auth.guard';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 @NgModule({
@@ -15,12 +16,14 @@ import { AuthGuard } from '../service/authGuard/auth.guard';
     RouterModule.forChild(
       [
         { path: 'product', component: ProductComponent, canActivate: [AuthGuard] },
+        { path: 'product/:id', component: ProductDetailComponent, canActivate: [AuthGuard] }
       ]
     )
     //FormsModule
   ],
   //exports: [FormsModule];
   declarations: [ProductComponent,
-    ProductListComponent]
+    ProductListComponent,
+    ProductDetailComponent]
 })
 export class ProductModule { }

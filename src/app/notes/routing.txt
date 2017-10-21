@@ -26,6 +26,11 @@ this will place all common modules in single file.
 
 Router service is used to navigate from TS files.
 
+
+Dynamic Routes:
+1. we need a url like 'product/id' , we can configure the same by useg path : 'product/:id'
+2. To access the same in the component we need to use a sevice ""
+
 Guards:
 1. Restrict the access to unauthorized area.
 
