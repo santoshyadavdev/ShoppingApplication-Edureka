@@ -8,6 +8,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { AuthGuard } from '../service/authGuard/auth.guard';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import {  ProductService } from '../service/product/product.service';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     RouterModule.forChild(
       [
         {
-          path: 'product', component: ProductComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard],
+          path: '', component: ProductComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard],
           children: [
             { path: ':id', component: ProductDetailComponent  },
             { path: 'edit/:id', component: ProductEditComponent }
@@ -32,6 +33,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
   declarations: [ProductComponent,
     ProductListComponent,
     ProductDetailComponent,
-    ProductEditComponent]
+    ProductEditComponent],
+    providers: [ProductService]
 })
 export class ProductModule { }

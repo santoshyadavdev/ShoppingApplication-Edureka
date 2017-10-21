@@ -37,6 +37,19 @@ children property:
 Use this property when we want to load some component based on URL in same page.
 Or in simple terms want to achive nesting.
 
+
+Lazy Loading:
+1. Load the moule when requested.
+2. Angular by default has eager loading configured.
+3. We should lazy load the module which is rarely used
+
+Pre-requisite:
+1. A module should not share anything with any other module, it means it should not be part of any imports array
+2. It should not have any path for parent router configuration
+3. The routing module will have the configuration , by using loadChildren property 
+syntax is 'reativepathforcomponent#className for module'
+
+
 Guards:
 1. Restrict the access to unauthorized area.
 
