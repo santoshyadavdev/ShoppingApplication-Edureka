@@ -18,3 +18,5 @@ why:
 1. To set global headers.
 2. Modify some request before the call is made to actual API.
 
+
+https://github.com/autopulous/angular2-soap
