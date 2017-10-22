@@ -1,0 +1,16 @@
+Official website:
+https://webpack.js.org/
+
+
+
+What is webpack
+1. It is bundler, async module loader and it gives us the development server.
+
+use "ng eject" to take webpack configuration file in root directory.
+
+3. To create a prod build :
+use "npm run build" -- this will not give us minified file
+use "npm run build:p" this will give us minified file.
+
+To install a local server :
+1. "npm install -g http-server"
