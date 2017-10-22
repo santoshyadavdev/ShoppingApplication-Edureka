@@ -5,11 +5,14 @@ import { RouterModule } from '@angular/router';
 
 import { CurrencyPipe } from '../custompipes/currency.pipe';
 import { PricePipe } from '../custompipes/price.pipe';
+import { MatButtonModule, MatDialogModule } from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   declarations: [CurrencyPipe, PricePipe],
   exports: [
@@ -17,7 +20,9 @@ import { PricePipe } from '../custompipes/price.pipe';
     ReactiveFormsModule,
     RouterModule,
     CurrencyPipe,
-    PricePipe
+    PricePipe,
+    MatButtonModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }

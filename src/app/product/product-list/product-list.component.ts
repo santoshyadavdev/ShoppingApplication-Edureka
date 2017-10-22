@@ -2,7 +2,10 @@ import {
   Component, OnInit, Input, Output,
   EventEmitter, OnChanges, SimpleChanges
 } from '@angular/core';
+import { MatDialog } from '@angular/material';
+
 import { Product } from '../../service/product/product';
+import { ProductEditComponent } from '../product-edit/product-edit.component';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -17,7 +20,7 @@ export class ProductListComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
   }
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -25,5 +28,16 @@ export class ProductListComponent implements OnInit, OnChanges {
   sendDataToParent() {
     this.visibe.emit(true);
     this.message.emit('This is message from child');
+  }
+
+  editProduct(product: Product): void {
+    const dialogRef = this.dialog.open(ProductEditComponent, {
+      data: product
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
   }
 }

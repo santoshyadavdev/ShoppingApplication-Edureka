@@ -24,7 +24,8 @@
       <td>{{product.price | appcurrency : 'Rs' : 2 }}</td>
       <td>{{product.createdDate | date : 'dd-MMM-yyyy' }}</td>
       <td><button class="btn btn-primary" type="button" [routerLink]="[product.id]">Details</button></td>
-      <td><button class="btn btn-primary" type="button" [routerLink]="['edit',product.id]">Edit</button></td>
+      <!-- <td><button class="btn btn-primary" type="button" [routerLink]="['edit',product.id]">Edit</button></td> -->
+      <td><button mat-raised-button color="primary" (click)="editProduct(product)" type="button">Edit</button></td>
     </tr>
   </tbody>
 </table>

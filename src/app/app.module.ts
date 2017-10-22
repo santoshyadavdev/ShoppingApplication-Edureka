@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { RoutingModule } from './routing/routing.module';
 import { CustomerModule } from './customer/customer.module';
 import { ProductModule } from './product/product.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 
@@ -36,8 +38,10 @@ import { API_CONFIG, APP_CONFIG } from './service/appconfig/appconfig.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    //  FormsModule,
+    //  ReactiveFormsModule,
     HttpClientModule,
     // ProductModule,
     CustomerModule,
