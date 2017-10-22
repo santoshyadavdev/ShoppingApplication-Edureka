@@ -1,0 +1,17 @@
+What are pipes:
+It will be used to transform our data.
+
+InBuilt Pipes:
+1. lowercase
+2. uppercase
+3. percent
+4. currency
+5. date
+
+
+
+Custom Pipe:
+we can create a custom pipe by implementing PipeTransform interface.
+value: which is at left side of your "|" Pipe symbol
+args:  we can have multiple arguments, and they are mentioned after ":"  colon symbol
+

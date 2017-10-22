@@ -13,9 +13,9 @@ export class ProductListComponent implements OnInit, OnChanges {
   @Input() title: string;
   @Output() visibe = new EventEmitter<boolean>();
   @Output() message = new EventEmitter<string>();
-
+  mrp: number = 0;
   ngOnChanges(changes: SimpleChanges): void {
-   console.log(changes);
+    console.log(changes);
   }
   constructor() { }
 

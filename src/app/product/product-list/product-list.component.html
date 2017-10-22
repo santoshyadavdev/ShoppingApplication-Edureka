@@ -1,4 +1,6 @@
-<h1>{{title}}</h1>
+<h1>{{title | uppercase}}</h1>
+
+<input class="form-control" type="number" name="price" [(ngModel)]="mrp" placeholder="Price">
 
 <table class="table">
   <thead>
@@ -6,17 +8,21 @@
       <th>ID</th>
       <th>Name</th>
       <th>Price</th>
+      <th>Created Date</th>
       <th> Details </th>
       <th>Edit</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of productList">
+    <tr *ngFor="let product of productList | price : mrp">
       <td>
         {{product.id}}
       </td>
-      <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
+      <td>{{product.name | lowercase}}</td>
+      <!-- <td>{{product.price | currency: 'INR' | percent}}</td> -->
+      <!-- <td>{{product.price | percent}}</td> -->
+      <td>{{product.price | appcurrency : 'Rs' : 2 }}</td>
+      <td>{{product.createdDate | date : 'dd-MMM-yyyy' }}</td>
       <td><button class="btn btn-primary" type="button" [routerLink]="[product.id]">Details</button></td>
       <td><button class="btn btn-primary" type="button" [routerLink]="['edit',product.id]">Edit</button></td>
     </tr>

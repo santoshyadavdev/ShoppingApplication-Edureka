@@ -3,17 +3,21 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { CurrencyPipe } from '../custompipes/currency.pipe';
+import { PricePipe } from '../custompipes/price.pipe';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [],
+  declarations: [CurrencyPipe, PricePipe],
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    CurrencyPipe,
+    PricePipe
   ]
 })
 export class SharedModule { }

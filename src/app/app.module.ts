@@ -25,6 +25,7 @@ import { PostResolveGuard } from './service/post/post-resolve.guard';
 
 import { API_CONFIG, APP_CONFIG } from './service/appconfig/appconfig.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,

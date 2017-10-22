@@ -5,10 +5,10 @@ import { Product } from './product';
 export class ProductService {
 
   products: Product[] = [{
-    id: 1, name: 'LED TV', price: 10000
+    id: 1, name: 'LED TV', price: 10000, createdDate: new Date('11-Nov-2014')
   },
   {
-    id: 2, name: 'AC', price: 20000
+    id: 2, name: 'AC', price: 20000, createdDate: new Date('11-Nov-2014')
   }];
 
   constructor(private isLoggedIn: boolean) {
