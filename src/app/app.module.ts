@@ -23,6 +23,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './service/authGuard/auth.guard';
 import { PostResolveGuard } from './service/post/post-resolve.guard';
 
+import { API_CONFIG, APP_CONFIG } from './service/appconfig/appconfig.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,8 @@ import { PostResolveGuard } from './service/post/post-resolve.guard';
     RoutingModule
   ],
   providers: [PostResolveGuard, { provide: LoginService, useClass: NewloginService }, PostService,
-    { provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true }, AuthGuard],//ProductService], 
+    { provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true }, AuthGuard,
+    { provide: APP_CONFIG, useValue: API_CONFIG }],//ProductService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
