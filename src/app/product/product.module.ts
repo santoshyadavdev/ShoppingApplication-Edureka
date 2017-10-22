@@ -9,6 +9,7 @@ import { AuthGuard } from '../service/authGuard/auth.guard';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import {  ProductService } from '../service/product/product.service';
+import { ProductFactoryProvider } from '../service/product/product.factory';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {  ProductService } from '../service/product/product.service';
     ProductListComponent,
     ProductDetailComponent,
     ProductEditComponent],
-    providers: [ProductService]
+    // providers: [ProductService],
+    providers: [ProductFactoryProvider]
 })
 export class ProductModule { }

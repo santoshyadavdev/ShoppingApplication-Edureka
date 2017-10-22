@@ -47,7 +47,7 @@ the above syntax will help us to remove any implmentation and use new implmentat
 Other types of non-class based service:
 1. Value provider  -- Will be used when we have some static data which we want to use as a service.
  For eg: API End Point, Page Size in our application
-2. Factory  -- we will discuss during routing
+2. Factory  -- This is very useful, when we want some data from another service at runtime.
 
 
 

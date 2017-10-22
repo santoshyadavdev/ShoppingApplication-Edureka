@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { Product } from './product';
 @Injectable()
@@ -10,7 +11,9 @@ export class ProductService {
     id: 2, name: 'AC', price: 20000
   }];
 
-  constructor() { }
+  constructor(private isLoggedIn: boolean) {
+    console.log(isLoggedIn);
+  }
 
   getProducts() {
     return this.products;
