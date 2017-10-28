@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RoutingModule } from './routing/routing.module';
 import { CustomerModule } from './customer/customer.module';
@@ -26,7 +26,6 @@ import { AuthGuard } from './service/authGuard/auth.guard';
 import { PostResolveGuard } from './service/post/post-resolve.guard';
 
 import { API_CONFIG, APP_CONFIG } from './service/appconfig/appconfig.service';
-
 
 @NgModule({
   declarations: [

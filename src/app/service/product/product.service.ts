@@ -1,5 +1,9 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Injectable } from '@angular/core';
+
+import { APP_CONFIG } from '../appconfig/appconfig.service';
+import { IAppConfig } from '../appconfig/Iapp.config';
+import { Injectable, Inject } from '@angular/core';
 import { Product } from './product';
 @Injectable()
 export class ProductService {
@@ -11,7 +15,9 @@ export class ProductService {
     id: 2, name: 'AC', price: 20000, createdDate: new Date('11-Nov-2014')
   }];
 
-  constructor(private isLoggedIn: boolean) {
+  constructor(private isLoggedIn: boolean,
+    private httpService: HttpClient,
+    @Inject(APP_CONFIG) private config: IAppConfig) {
     console.log(isLoggedIn);
   }
 
@@ -20,7 +26,8 @@ export class ProductService {
   }
 
   addProduct(product: Product) {
-    this.products.push(product);
+    return this.httpService.post(this.config.productAPI, product);
+    // this.products.push(product);
   }
 
 }

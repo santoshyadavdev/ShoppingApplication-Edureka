@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { CurrencyPipe } from '../custompipes/currency.pipe';
 import { PricePipe } from '../custompipes/price.pipe';
 import { MatButtonModule, MatDialogModule } from '@angular/material';
+import { HoverDirective } from '../directive/hover.directive';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,7 +15,7 @@ import { MatButtonModule, MatDialogModule } from '@angular/material';
     MatButtonModule,
     MatDialogModule
   ],
-  declarations: [CurrencyPipe, PricePipe],
+  declarations: [CurrencyPipe, PricePipe ,HoverDirective],
   exports: [
     FormsModule,
     ReactiveFormsModule,
@@ -22,7 +23,8 @@ import { MatButtonModule, MatDialogModule } from '@angular/material';
     CurrencyPipe,
     PricePipe,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    HoverDirective
   ]
 })
 export class SharedModule { }

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { SharedModule } from '../shared/shared.module';
 import { CustomerComponent } from './customer.component';
+import { FormArray } from '@angular/forms';
 
 describe('CustomerComponent', () => {
   let component: CustomerComponent;
@@ -8,9 +9,10 @@ describe('CustomerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomerComponent ]
+      declarations: [CustomerComponent],
+      imports: [SharedModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +24,12 @@ describe('CustomerComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should add a new card', () => {
+    component.addCard();
+    fixture.detectChanges();
+    const card = component.customerForm.controls['cards'] as FormArray;
+    expect(card.length).toBe(2);
+  });
+
 });

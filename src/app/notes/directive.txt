@@ -1,0 +1,20 @@
+what is a directive
+1. Something which can modify the DOM.
+
+Types:
+1. Component : where we create HTML tages
+2. attribute directive : this is where we create attributes/poperties.
+3. structured directive : This will modif the actual DOM
+
+creating a directive:
+1. ng g directive <directive_name>
+
+
+properties: 
+selector: the tag which will be used as a attribute.
+
+ElementRef: the service which will give use the access to the control/html tag.
+
+HostListener: by using this decorator we can ask our directive to listen to evetnt.
+
+we can use @Input to pass some value to our directive.

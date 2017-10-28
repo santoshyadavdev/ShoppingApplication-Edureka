@@ -7,5 +7,6 @@ export const APP_CONFIG = new InjectionToken<IAppConfig>('appconfig.service');
 export const API_CONFIG: IAppConfig = {
   apiEndPoint: 'http://jsonplaceholder.typicode.com/',
   pageSize: 10,
-  token: 'WYTEYRHGHJD2313'
+  token: 'WYTEYRHGHJD2313',
+  productAPI : 'http://localhost:3000/product'
 }

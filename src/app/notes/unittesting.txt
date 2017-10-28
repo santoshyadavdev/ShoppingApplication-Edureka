@@ -1,0 +1,23 @@
+1. TDD (Test Driven Development) and BDD (Behaior Driven Development)
+
+Frameworks:
+
+1. Jasmine
+we can write all test cases in Typescript , because of @types/jasmine 
+which is availalbe with setup.
+
+Task Runner:
+1. Karma:  This is a task runner tp run our all test cases.
+karma.conf.js file is karma configuration file.
+
+browsers: where we  specify which browser to run.
+
+To Run Unit Test
+npm run test
+
+Blocks:
+1. describe : Write the name of component/pipe/direcive name which we want to test.
+2. beforeEach : this will contain the code which will execute before every unit test.
+3. it :
+4. TestBed.configureTestingModule this is similar to @ngModule decorator.
+5. fixture.detectChanges(); call this method, in case we want to verify changs on UI.

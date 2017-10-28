@@ -62,7 +62,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy, AfterViewIn
   }
 
   addProduct() {
-    this.productService.addProduct(this.product);
+    this.productService.addProduct(this.product).subscribe((data) => console.log(data));
     this.productListComponent.productList = this.productService.getProducts();
     this.product = new Product();
   }

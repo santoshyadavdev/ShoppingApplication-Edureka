@@ -4,14 +4,13 @@
 
 <form class="col-md-6" (submit)="login()" novalidate #loginForm="ngForm">
   <div class="form-group">
-    <input class="form-control" type="text" [(ngModel)]="user.userName" name="username" placeholder="User Name">
+    <input appHover class="form-control" type="text" [(ngModel)]="user.userName" name="username" placeholder="User Name">
   </div>
   <div class="form-group">
-      <input class="form-control" type="text" [(ngModel)]="user.password" name="password" placeholder="Password">
+      <input appHover [color]="'red'"  class="form-control" type="text" [(ngModel)]="user.password" name="password" placeholder="Password">
   </div>
   <div>
       <!-- <button type="submit" class="btn btn-primary">Login</button> -->
       <button type="submit"  mat-raised-button color="primary">Login</button>
-     
   </div>
 </form>
